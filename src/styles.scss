@@ -1,1 +1,96 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@import "assets/fonts/font";
+@include mat.core();
+
+$Badesaba_interview_test-typography: mat.define-typography-config(
+  $font-family: 'IRANSans',
+);
+
+$dark-text: #000000;
+$dark-primary-text: rgba($dark-text, 0.87);
+$light-text: #ffffff;
+$light-primary-text: $light-text;
+
+$primary-palette: (
+  main: #320d47,
+  lighter: #c2b6c8,
+  darker: #1f072f,
+  200: #320d47, // For slide toggle,
+  contrast : (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+$Badesaba_interview_test-primary: mat.define-palette($primary-palette, main, lighter, darker);
+
+$accent-palette: (
+  main: #eceaef,
+  lighter: #f9f9fa,
+  darker: #e4e1e8,
+  200: #eceaef, // For slide toggle,
+  contrast : (
+    main: $dark-primary-text,
+    lighter: $dark-primary-text,
+    darker: $dark-primary-text,
+  )
+);
+$Badesaba_interview_test-accent: mat.define-palette($accent-palette, main, lighter, darker);
+
+$Badesaba_interview_test-warn: mat.define-palette(mat.$red-palette);
+
+$Badesaba_interview_test-theme: mat.define-light-theme((
+  color: (
+    primary: $Badesaba_interview_test-primary,
+    accent: $Badesaba_interview_test-accent,
+    warn: $Badesaba_interview_test-warn,
+  ),
+  typography: $Badesaba_interview_test-typography
+));
+
+@include mat.all-component-themes($Badesaba_interview_test-theme);
+
+html, body { height: 100%; }
+
+body {
+  --primary-color: #320d47;
+  --primary-lighter-color: #c2b6c8;
+  --primary-darker-color: #1f072f;
+  --accent-color: #eceaef;
+  --accent-lighter-color: #f9f9fa;
+  --accent-darker-color: #e4e1e8;
+  --warn-color: #ff0000;
+  --warn-lighter-color: #ffb3b3;
+  --warn-darker-color: #ff0000;
+
+  margin: 0;
+  font-family: IRANSans, sans-serif;
+}
+
+.mat-raised-button, .mat-stroked-button, .mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 .65em;
+  min-width: 3em;
+  line-height: 36.4px
+}
+
+.mat-standard-chip {
+  padding: .5em .85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-family: 'Material Icons', serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
