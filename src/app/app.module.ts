@@ -6,6 +6,8 @@ import {AppComponent} from './app.component';
 import {CoreModule} from "./core/core.module";
 import {PageNotFoundComponent} from "./shared/page-not-found/page-not-found.component";
 import {SharedModule} from "./shared/shared.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {LoadingModule} from "./shared/loading/loading.module";
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import {SharedModule} from "./shared/shared.module";
   imports: [
     CoreModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    LoadingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

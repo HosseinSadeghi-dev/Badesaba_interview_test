@@ -11,6 +11,9 @@ import {MatListModule} from "@angular/material/list";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatRadioModule} from "@angular/material/radio";
+import {MatCardModule} from "@angular/material/card";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 const materialModules = [
   MatButtonModule,
@@ -23,7 +26,10 @@ const materialModules = [
   MatListModule,
   MatExpansionModule,
   MatCheckboxModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatCardModule,
+  MatSnackBarModule,
+  MatProgressSpinnerModule
 ]
 
 /**

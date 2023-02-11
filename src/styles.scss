@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 @import "assets/fonts/font";
+
 @include mat.core();
 
 $Badesaba_interview_test-typography: mat.define-typography-config(
@@ -50,7 +51,9 @@ $Badesaba_interview_test-theme: mat.define-light-theme((
 
 @include mat.all-component-themes($Badesaba_interview_test-theme);
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
 
 body {
   --primary-color: #320d47;
@@ -65,18 +68,6 @@ body {
 
   margin: 0;
   font-family: IRANSans, sans-serif;
-}
-
-.mat-raised-button, .mat-stroked-button, .mat-flat-button {
-  padding: 0 1.15em;
-  margin: 0 .65em;
-  min-width: 3em;
-  line-height: 36.4px
-}
-
-.mat-standard-chip {
-  padding: .5em .85em;
-  min-height: 2.5em;
 }
 
 .material-icons {
@@ -94,3 +85,41 @@ body {
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+.mat-raised-button, .mat-stroked-button, .mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 .65em;
+  min-width: 3em;
+  line-height: 36.4px
+}
+
+.mat-standard-chip {
+  padding: .5em .85em;
+  min-height: 2.5em;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  //border-color: #F9F9F9 !important;
+}
+
+.mat-mdc-form-field, .mat-mdc-floating-label {
+  font-size: 14px !important;
+  letter-spacing: normal !important;
+}
+
+.validSnackBar {
+  --mdc-snackbar-container-color: darkgreen !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+}
+
+.errorSnackBar {
+  --mdc-snackbar-container-color: darkred !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+}
+
+.warningSnackBar {
+  --mdc-snackbar-container-color: yellow !important;
+  --mdc-snackbar-supporting-text-color: black !important;
+}
+
+

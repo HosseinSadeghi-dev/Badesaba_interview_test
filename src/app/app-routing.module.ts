@@ -6,7 +6,7 @@ import {PageNotFoundComponent} from "./shared/page-not-found/page-not-found.comp
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/profile',
+    redirectTo: '/admin',
     pathMatch: 'full',
   },
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'profile',
-        loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule),
+        path: 'admin',
+        loadChildren: () => import('./modules/admin-panel/admin-panel.module').then(m => m.AdminPanelModule),
       },
     ]
   },
