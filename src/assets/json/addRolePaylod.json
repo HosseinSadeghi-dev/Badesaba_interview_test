@@ -1,0 +1,10 @@
+{
+    "name": "مدیر محصول ",
+    "description": "",
+    "active": true,
+    "actionIds": [
+     "1",
+      "5",
+      "3"
+    ]
+}

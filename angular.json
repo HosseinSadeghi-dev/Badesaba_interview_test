@@ -34,7 +34,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/style/bootstrap.css"
             ],
             "scripts": []
           },
@@ -97,7 +98,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/style/bootstrap.css"
             ],
             "scripts": []
           }
