@@ -920,3 +920,11 @@ a:not([href]):hover {
   font-size: 8rem;
   line-height: 1;
 }
+
+.op-1 {
+  opacity: 1 !important;
+}
+
+.op-0 {
+  opacity: 0 !important;
+}

@@ -70,6 +70,10 @@ body {
   font-family: IRANSans, sans-serif;
 }
 
+input {
+  font-family: inherit;
+}
+
 .material-icons {
   font-family: 'Material Icons', serif;
   font-weight: normal;
@@ -98,13 +102,13 @@ body {
   min-height: 2.5em;
 }
 
-.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
-  //border-color: #F9F9F9 !important;
-}
-
 .mat-mdc-form-field, .mat-mdc-floating-label {
   font-size: 14px !important;
   letter-spacing: normal !important;
+}
+
+.mat-mdc-form-field-error {
+  font-size: 12px !important;
 }
 
 .validSnackBar {
@@ -121,5 +125,3 @@ body {
   --mdc-snackbar-container-color: yellow !important;
   --mdc-snackbar-supporting-text-color: black !important;
 }
-
-

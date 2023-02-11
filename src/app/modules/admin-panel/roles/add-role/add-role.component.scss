@@ -1,0 +1,45 @@
+$border-color: var(--accent-color);
+
+.add-role-panel {
+
+  .add-role-inputs {
+
+    input {
+      transition: all 0.25s linear;
+      border-radius: 5px;
+      border: $border-color 1px solid;
+      background: var(--accent-lighter-color);
+      padding: 10px;
+      min-height: 25px;
+      min-width: 350px;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: none !important;
+        border-color: var(--primary-lighter-color);
+      }
+
+      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: var(--accent-darker-color);
+        opacity: 1; /* Firefox */
+      }
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: var(--accent-darker-color);
+      }
+    }
+
+    .mdc-switch__icons {
+      display: none !important;
+    }
+
+  }
+
+  .roles-categories {
+    transition: all 0.25s linear;
+    border-radius: 5px;
+    border: $border-color 1px solid;
+    background: var(--accent-lighter-color);
+    padding: 10px;
+  }
+
+}

@@ -1,0 +1,21 @@
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}
+
+.mat-expansion-panel {
+  background: transparent;
+  position: unset !important;
+  .mat-expansion-panel-header.mat-expanded {
+    height: 48px !important;
+  }
+}
+
+.mat-expansion-panel-spacing {
+  margin: 0 !important;
+}
+
+mat-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+}

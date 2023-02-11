@@ -1,0 +1,19 @@
+<mat-accordion>
+  <ng-container *ngFor="let category of categories;let idx = index">
+    <mat-expansion-panel [disabled]="!category.children.length">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-checkbox color="primary" (change)="selectCategory($event.checked, category.id)">
+            {{category.name}}
+          </mat-checkbox>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <app-select-category-tree
+        *ngIf="category.children && category.children.length"
+        [categories]="category.children">
+      </app-select-category-tree>
+    </mat-expansion-panel>
+    <mat-divider *ngIf="categories.length - 1 != idx"></mat-divider>
+  </ng-container>
+</mat-accordion>

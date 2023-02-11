@@ -1,0 +1,44 @@
+<div fxLayout="column" class="add-role-panel"
+     fxLayoutAlign="start stretch" fxLayoutGap="1.5rem">
+
+  <div fxLayout="row" fxLayoutAlign="start center"
+       class="add-role-inputs" fxLayoutGap="1rem" [formGroup]="addRoleForm">
+    <div fxLayout="column" fxLayoutAlign="start stretch">
+      <input type="text" matInput formControlName="name" placeholder="نام نقش">
+      <mat-error
+        [ngClass]="[(addRoleForm.controls['name'].touched && addRoleForm.controls['name'].invalid) ? 'op-1':'op-0']">
+        نام نقش اجباری است
+      </mat-error>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start stretch">
+      <input type="text" matInput formControlName="description" placeholder="توضیحات نقش">
+      <mat-error
+        [ngClass]="[(addRoleForm.controls['description'].touched && addRoleForm.controls['description'].invalid) ? 'op-1':'op-0']">
+        توضیحات نقش اجباری است
+      </mat-error>
+    </div>
+    <mat-slide-toggle class="mr-auto pb-3"
+                      formControlName="active" color="primary">
+      {{addRoleForm.controls['active'].value ? 'فعال' : 'غیرفعال'}}
+    </mat-slide-toggle>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="1rem">
+
+    <div class="roles-categories" fxFlex="350px"
+         fxLayout="column" fxLayoutAlign="start stretch">
+      <input type="text" #searchInput (keyup)="searchCategories(searchInput.value)">
+      <mat-icon matPrefix>search</mat-icon>
+      <app-select-category-tree class="p-relative"
+                                [categories]="categories"
+                                *ngIf="categories?.length">
+      </app-select-category-tree>
+    </div>
+
+    <div fxFlex fxLayout="column" fxLayoutAlign="start stretch">
+      <ng-container *ngFor="let category of categoryService.newRoleSelectedCategories">{{category.name}}</ng-container>
+    </div>
+
+  </div>
+
+</div>
