@@ -1,0 +1,33 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <header class="admin-header"></header>
+
+  <div fxLayout="row" class="admin-panel"
+       fxLayoutAlign="space-around stretch" fxLayoutGap="50px">
+
+    <div fxFlex="10%"></div>
+
+    <div fxFlex="15%" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1.5rem">
+
+      <div class="breadcrumb" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="start center">
+        <a href="#">لیست نقش ها</a>
+        <span>/</span>
+        <a class="selected" href="#">افزودن نقش</a>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+        <a class="product-shortcut text-right" [routerLink]="'roles/' + product._id"
+           routerLinkActive="active-route-product"
+           *ngFor="let product of products">
+          {{product.name}}
+        </a>
+      </div>
+
+    </div>
+
+    <div fxFlex>
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>
