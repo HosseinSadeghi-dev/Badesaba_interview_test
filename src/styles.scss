@@ -53,6 +53,7 @@ $Badesaba_interview_test-theme: mat.define-light-theme((
 
 html, body {
   height: 100%;
+  box-sizing: border-box;
 }
 
 body {
@@ -109,6 +110,14 @@ input {
 
 .mat-mdc-form-field-error {
   font-size: 12px !important;
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+  border-color: var(--primary-color) !important;
+}
+
+.mdc-button {
+  letter-spacing: normal !important;
 }
 
 .validSnackBar {
