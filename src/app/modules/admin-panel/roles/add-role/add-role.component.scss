@@ -20,12 +20,12 @@ $border-color: var(--accent-color);
       }
 
       &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: var(--accent-darker-color);
+        color: var(--primary-lighter-color);
         opacity: 1; /* Firefox */
       }
 
       ::-ms-input-placeholder { /* Microsoft Edge */
-        color: var(--accent-darker-color);
+        color: var(--primary-lighter-color);
       }
     }
 
@@ -80,21 +80,7 @@ $border-color: var(--accent-color);
       height: 0;
       opacity: 0;
       overflow: auto;
-      font-size: 14px;
       color: var(--primary-lighter-color);
-
-      .mdc-list-item__end {
-        margin: 0 !important;
-      }
-      .mdc-list-item__content {
-        direction: rtl !important;
-        .mdc-list-item__primary-text {
-          font-size: 14px !important;
-          letter-spacing: normal !important;
-          color: var(--primary-lighter-color);
-        }
-      }
-
     }
 
   }

@@ -65,17 +65,14 @@
         <div class="accesses-list" fxLayout="column" [formGroup]="addRoleForm"
              fxLayoutAlign="start stretch">
           <ng-container *ngIf="category.selectedAccess else noAccessSelected">
-            <mat-selection-list *ngIf="category.actions?.length else noAccessFound"
-                                formControlName="actionIds" multiple fxLayout="row wrap"
-                                fxLayoutAlign="start center" fxLayoutGap="1%">
-              <!--              <span fxFlex="32%" *ngFor="let access of category.actions">-->
-              <!--                {{access.name}}-->
-              <!--              </span>-->
-              <mat-list-option *ngFor="let access of category.actions" dir="ltr"
-                               color="primary" fxFlex="32%" [value]="access._id">
+            <ul *ngIf="category.actions?.length else noAccessFound"
+                fxLayout="row wrap"
+                fxLayoutAlign="start center" fxLayoutGap="1%">
+              <li *ngFor="let access of category.actions"
+                  fxFlex="32%" class="mb-2">
                 {{access.name}}
-              </mat-list-option>
-            </mat-selection-list>
+              </li>
+            </ul>
             <ng-template #noAccessFound>
               <mat-hint>هیچ دسترسی یافت نشد</mat-hint>
             </ng-template>

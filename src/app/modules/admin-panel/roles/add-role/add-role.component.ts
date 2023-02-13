@@ -80,6 +80,13 @@ export class AddRoleComponent implements OnInit, OnDestroy {
   }
 
   submitNewRole(): void {
+    let selectedActions: string[] = [];
+    this.categoryService.newRoleSelectedCategories.forEach(category =>
+      category.actions?.forEach(action =>
+        selectedActions.push(action._id)
+      )
+    )
+
     if (this.addRoleForm.controls['name'].invalid) {
       this.addRoleForm.controls['name'].markAsTouched()
       this.notificationService.error('نام نقش اجباری است')
@@ -90,10 +97,13 @@ export class AddRoleComponent implements OnInit, OnDestroy {
       this.notificationService.error('توضیحات نقش اجباری است')
       return
     }
-    if (!this.addRoleForm.controls['actionIds'].value?.length) {
+    if (!selectedActions?.length) {
       this.notificationService.error('انتخاب حداقل 1 دسترسی اجباری است')
       return
+    } else {
+      this.addRoleForm.controls['actionIds'].setValue(selectedActions)
     }
+
     this.actionService.setNewRoleAction(this.addRoleForm.value);
     this.addRoleForm.reset()
     this.notificationService.valid('با موفقیت ثبت شد')
